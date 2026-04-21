@@ -1,18 +1,31 @@
-import google.generativeai as genai
+from google import genai
 import os
 from dotenv import load_dotenv
-from agent.prompt import PROMPT
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
-model = genai.GenerativeModel("gemini-1.5-pro")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 def process_email(email_text):
-    full_prompt = PROMPT + "\n\nEmail:\n" + email_text
+    prompt = f"""
+You are an AI assistant that processes emails.
 
-    response = model.generate_content(full_prompt)
+Extract:
+- Tasks
+- Priority (High, Medium, Low)
+- Deadlines
+- Summary
+
+Return JSON only.
+
+Email:
+{email_text}
+"""
+
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",  # ✅ updated working model
+        contents=prompt
+    )
 
     return response.text
