@@ -53,9 +53,19 @@ Structured Output
       "task": "Follow up with client",
       "priority": "High",
       "deadline": "Tomorrow"
+    },
+    {
+      "task": "Send updated pricing",
+      "priority": "High",
+      "deadline": "Tomorrow"
+    },
+    {
+      "task": "Schedule client demo",
+      "priority": "Medium",
+      "deadline": "Next week"
     }
   ],
-  "summary": "Client is interested but needs pricing update",
+  "summary": "Client is interested but needs pricing update and demo scheduling",
   "metadata": {
     "sender": "client@example.com",
     "category": "Sales"
