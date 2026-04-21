@@ -49,6 +49,16 @@ Structured Output
 
 ---
 
+## 📈 Value
+
+- Saves 70–80% manual effort
+- Improves task tracking
+- Enhances team productivity
+- Minimizes missed actions
+- Automates repetitive tasks
+
+---
+
 ## 📦 Output Example
 
 ```json
