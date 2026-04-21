@@ -101,6 +101,7 @@ task-agent/
 ├── examples/
 │   └── sample_email.txt   #  Example email
 │
+├── .gitignore             #  ignore files
 ├── run_agent.py           #  entry point
 └── requirements.txt       #  Dependencies
 ```
