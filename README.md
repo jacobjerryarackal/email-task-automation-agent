@@ -4,6 +4,25 @@ An AI-powered workflow system that converts unstructured emails into structured 
 
 ---
 
+## 🏗️ Project Structure
+
+```text
+task-agent/
+├── agent/
+│   ├── __init__.py
+│   ├── prompt.py          #  prompt template
+│   └── email_agent.py     #  agent logic
+│
+├── examples/
+│   └── sample_email.txt   #  Example email
+│
+├── .gitignore             #  ignore files
+├── run_agent.py           #  entry point
+└── requirements.txt       #  Dependencies
+```
+
+---
+
 ## 🚀 Problem
 
 Teams spend hours manually:
@@ -86,22 +105,3 @@ Structured Output
     "category": "Sales"
   }
 }
-
----
-
-## 🏗️ Project Structure
-
-```text
-task-agent/
-├── agent/
-│   ├── __init__.py
-│   ├── prompt.py          #  prompt template
-│   └── email_agent.py     #  agent logic
-│
-├── examples/
-│   └── sample_email.txt   #  Example email
-│
-├── .gitignore             #  ignore files
-├── run_agent.py           #  entry point
-└── requirements.txt       #  Dependencies
-```
