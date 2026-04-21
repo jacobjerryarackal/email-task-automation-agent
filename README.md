@@ -42,6 +42,11 @@ Summary Generation
 ↓  
 Structured Output  
 
+
+
+
+![Workflow](./workflow.png)
+
 ---
 
 ## 📦 Output Example
