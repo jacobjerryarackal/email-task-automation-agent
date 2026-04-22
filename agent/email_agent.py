@@ -1,10 +1,20 @@
 from google import genai
+from pydantic import BaseModel
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+class Task(BaseModel):
+    task: str
+    priority: str
+    deadline: str
+
+class EmailDetails(BaseModel):
+    tasks: list[Task]
+    summary: str
 
 
 def process_email(email_text):
@@ -24,8 +34,12 @@ Email:
 """
 
     response = client.models.generate_content(
-        model="gemini-2.0-flash",  # ✅ updated working model
-        contents=prompt
+        model="gemini-3-pro-preview",
+        contents=prompt,
+        config={
+            "response_mime_type": "application/json",
+            "response_schema": EmailDetails,
+        },
     )
 
-    return response.text
+    return response.parsed
